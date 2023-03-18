@@ -38,6 +38,8 @@ export type AvailableIcons =
   | "Boleto"
   | "DinnersClub"
   | "AmericanExpress"
+  | "MarketingCardPlus";
+
 
 interface Props extends JSX.SVGAttributes<SVGSVGElement> {
   /**
