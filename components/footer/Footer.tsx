@@ -2,7 +2,7 @@ import Icon, { AvailableIcons } from "$store/components/ui/Icon.tsx";
 import Text from "$store/components/ui/Text.tsx";
 import Container from "$store/components/ui/Container.tsx";
 import type { ComponentChildren } from "preact";
-import {ImageFooter}  from "./ImageFooter.tsx"
+import { ImageFooter } from "./ImageFooter.tsx";
 export type IconItem = { icon: AvailableIcons };
 export type StringItem = {
   label: string;
@@ -63,9 +63,10 @@ export interface Props {
   imageFooter?: ImageFooter[];
 }
 
-function Footer({ sections = [] }: Props) {
+function Footer({ sections = [], imageFooter }: Props) {
   return (
     <footer class="w-full flex flex-col divide-y-1 divide-default">
+      {JSON.stringify(imageFooter, null, 2)}
       <div>
         <Container class="w-full flex flex-col divide-y-1 divide-default">
           <FooterContainer>
@@ -74,7 +75,11 @@ function Footer({ sections = [] }: Props) {
               {sections.map((section) => (
                 <li>
                   <div>
-                    <Text class={"text-black"} variant="heading-3" tone="default-inverse">
+                    <Text
+                      class={"text-black"}
+                      variant="heading-3"
+                      tone="default-inverse"
+                    >
                       {section.label}
                     </Text>
                     <ul
@@ -100,7 +105,9 @@ function Footer({ sections = [] }: Props) {
                   <Text variant="body">
                     {section.label}
                     <ul
-                      class={hasIcon(section.children) ? "grid grid-cols-4 gap-2 text-#000" : "flex flex-col"}
+                      class={hasIcon(section.children)
+                        ? "grid grid-cols-4 gap-2 text-#000"
+                        : "flex flex-col"}
                     >
                       {section.children.map((item) => (
                         <li class={"text-#000"}>

@@ -77,7 +77,10 @@ export default function MarketingCards({ cards = [] }: Props) {
             height={205}
             class={`${openItems[index] ? "block" : "hidden"} md:block`}
           />
-          <Text variant="heading-3" class="ml-3 md:ml-0 text-center font-bold text-lg">
+          <Text
+            variant="heading-3"
+            class="ml-3 md:ml-0 text-center font-bold text-lg"
+          >
             {title}
           </Text>
           <Text
