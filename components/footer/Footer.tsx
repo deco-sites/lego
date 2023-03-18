@@ -66,7 +66,7 @@ export interface Props {
 function Footer({ sections = [], imageFooter =[] }: Props) {
   return (
     <footer>
-      <div >
+      <div class="bg-gray-100 border-y border-slate-700">
         <Container class="w-full flex flex-col divide-y-1 divide-default">
           <FooterContainer>
             {/* Desktop view */}
@@ -98,7 +98,7 @@ function Footer({ sections = [], imageFooter =[] }: Props) {
               ))}
             </ul>
             {imageFooter.map((item) => (
-                    <div class="w-[230px] absolute right-36">
+                    <div class="w-[230px] absolute right-36 bottom-149">
                       <ImageFooter item={item} />
                     </div>
                     ))} 
