@@ -19,7 +19,7 @@ export interface Props {
 export default function AgeMenu(
   { menuTitle = "Compre por Idade", items = [] }: Props,
 ) {
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
   const [height, setHeight] = useState(0);
   const content = useRef<HTMLDivElement>(null);
 
@@ -45,7 +45,7 @@ export default function AgeMenu(
         } transition-max-height duration-700 ease bg-menu shadow-menu`}
         ref={content}
       >
-        <div class="py-5 grid md:grid-cols-5 md:max-w-6xl md:m-auto">
+        <div class="md:py-5 grid md:grid-cols-5 md:max-w-6xl md:m-auto">
           {items.map(({ image, alt, title, url }) => (
             <a
               href={url}
