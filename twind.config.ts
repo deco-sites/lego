@@ -45,6 +45,8 @@ const options: Omit<Options, "selfURL"> = {
         "card": "#FFB700",
         "card-cta-dark": "#006DB7",
         "card-cta-light": "#008BEA",
+        "menu": "#FFCF00",
+        "menu-separator": "rgba(0, 0, 0, 0.08)",
       },
       textColor: {
         "default": "#161616",
@@ -112,9 +114,13 @@ const options: Omit<Options, "selfURL"> = {
         default: "0px 1px 4px 0px #0000001F",
         md: "0px 1px 5px 0px #00000024",
         lg: "0px 4px 10px 0px #0000001F",
+        menu: "inset 0 0 25px rgb(232 105 2 / 40%)",
         card: "inset 0 0 30px rgb(0 0 0 / 30%)",
         "card-cta":
           "inset 0 0 2px rgb(255 255 255 / 30%), inset 0 1px 0 rgb(255 255 255 / 30%)",
+      },
+      transitionProperty: {
+        "max-height": 'max-height',
       },
     },
     fontFamily: {
