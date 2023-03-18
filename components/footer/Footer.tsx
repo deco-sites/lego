@@ -2,7 +2,7 @@ import Icon, { AvailableIcons } from "$store/components/ui/Icon.tsx";
 import Text from "$store/components/ui/Text.tsx";
 import Container from "$store/components/ui/Container.tsx";
 import type { ComponentChildren } from "preact";
-import { ImageFooter } from "./ImageFooter.tsx";
+import ImageFooter, { ImageFooter as ImageFooterType } from "./ImageFooter.tsx";
 export type IconItem = { icon: AvailableIcons };
 export type StringItem = {
   label: string;
@@ -60,7 +60,7 @@ function FooterContainer(
 
 export interface Props {
   sections?: Section[];
-  imageFooter?: ImageFooter[];
+  imageFooter?: ImageFooterType[];
 }
 
 function Footer({ sections = [], imageFooter }: Props) {
@@ -106,11 +106,11 @@ function Footer({ sections = [], imageFooter }: Props) {
                     {section.label}
                     <ul
                       class={hasIcon(section.children)
-                        ? "grid grid-cols-4 gap-2 text-#000"
+                        ? "grid grid-cols-4 gap-2 text-black"
                         : "flex flex-col"}
                     >
                       {section.children.map((item) => (
-                        <li class={"text-#000"}>
+                        <li class={"text-black"}>
                           <SectionItem item={item} />
                         </li>
                       ))}
@@ -119,6 +119,7 @@ function Footer({ sections = [], imageFooter }: Props) {
                 </li>
               ))}
             </ul>
+            {/* <ImageFooter item={[]}/> */}
           </FooterContainer>
         </Container>
       </div>

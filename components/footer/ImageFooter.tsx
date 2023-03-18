@@ -1,5 +1,4 @@
-import LiveImage from "deco-sites/std/components/Image.tsx";
-import type { ComponentChildren } from "preact";
+import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
 
 export interface ImageFooter {
   src: LiveImage;
@@ -12,11 +11,11 @@ export type Section = {
   children: Item[];
 };
 
-function SectionItem({ item }: { item: Item }) {
+export default function ImageFooter({ item }: { item: Item }) {
   return (
     <div class="py-1.5 px-2.5">
       <img
-        class="max-h-200"
+        class="max-h-[200px]"
         src={(item as ImageFooter).src}
         alt={(item as ImageFooter).alt}
         title={(item as ImageFooter).title}

@@ -720,7 +720,7 @@ const manifest: DecoManifest = {
           "imageFooter": {
             "type": "array",
             "items": {
-              "title": "ImageFooter",
+              "title": "ImageFooterType",
               "type": "object",
               "properties": {
                 "src": {
