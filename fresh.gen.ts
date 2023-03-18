@@ -728,19 +728,9 @@ const manifest: DecoManifest = {
                   "type": "string",
                   "title": "Src",
                 },
-                "alt": {
-                  "type": "string",
-                  "title": "Alt",
-                },
-                "title": {
-                  "type": "string",
-                  "title": "Title",
-                },
               },
               "required": [
                 "src",
-                "alt",
-                "title",
               ],
             },
             "title": "Image Footer",
