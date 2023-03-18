@@ -42,6 +42,9 @@ const options: Omit<Options, "selfURL"> = {
         "interactive-inverse": "#FFFFFF",
         "hover": "rgba(0, 0, 0, 0.04)",
         "hover-inverse": "rgba(255, 255, 255, 0.4)",
+        "card": "#FFB700",
+        "card-cta-dark": "#006DB7",
+        "card-cta-light": "#008BEA",
       },
       textColor: {
         "default": "#161616",
@@ -52,6 +55,7 @@ const options: Omit<Options, "selfURL"> = {
         "section-title": "#161616",
         "positive": "#1A7346",
         "critical": "#B44125",
+        "card-cta": "#FFFFFF",
       },
       borderColor: {
         "default": "#D4DBD7",
@@ -108,6 +112,9 @@ const options: Omit<Options, "selfURL"> = {
         default: "0px 1px 4px 0px #0000001F",
         md: "0px 1px 5px 0px #00000024",
         lg: "0px 4px 10px 0px #0000001F",
+        card: "inset 0 0 30px rgb(0 0 0 / 30%)",
+        "card-cta":
+          "inset 0 0 2px rgb(255 255 255 / 30%), inset 0 1px 0 rgb(255 255 255 / 30%)",
       },
     },
     fontFamily: {
