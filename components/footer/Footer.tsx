@@ -1,9 +1,8 @@
 import Icon, { AvailableIcons } from "$store/components/ui/Icon.tsx";
 import Text from "$store/components/ui/Text.tsx";
 import Container from "$store/components/ui/Container.tsx";
-
 import type { ComponentChildren } from "preact";
-
+import ImageFooter, { ImageFooter as ImageFooterType } from "./ImageFooter.tsx";
 export type IconItem = { icon: AvailableIcons };
 export type StringItem = {
   label: string;
@@ -61,20 +60,25 @@ function FooterContainer(
 
 export interface Props {
   sections?: Section[];
+  imageFooter?: ImageFooterType[];
 }
 
-function Footer({ sections = [] }: Props) {
+function Footer({ sections = [], imageFooter =[] }: Props) {
   return (
-    <footer class="w-full flex flex-col divide-y-1 divide-default">
-      <div>
+    <footer>
+      <div >
         <Container class="w-full flex flex-col divide-y-1 divide-default">
           <FooterContainer>
             {/* Desktop view */}
+            <div>
             <ul class="hidden sm:flex flex-row gap-20">
               {sections.map((section) => (
                 <li>
                   <div>
-                    <Text class={"text-black"} variant="heading-3" tone="default-inverse">
+                    <Text
+                      class={"text-black"}
+                      variant="heading-3"
+                    >
                       {section.label}
                     </Text>
                     <ul
@@ -88,30 +92,45 @@ function Footer({ sections = [] }: Props) {
                         </li>
                       ))}
                     </ul>
+
                   </div>
                 </li>
               ))}
             </ul>
-
+            {imageFooter.map((item) => (
+                    <div class="w-[230px] absolute right-36">
+                      <ImageFooter item={item} />
+                    </div>
+                    ))} 
+            </div>
             {/* Mobile view */}
-            <ul class="flex flex-col sm:hidden sm:flex-row gap-4">
-              {sections.map((section) => (
-                <li>
-                  <Text variant="body">
-                    {section.label}
-                    <ul
-                      class={hasIcon(section.children) ? "grid grid-cols-4 gap-2 text-#000" : "flex flex-col"}
-                    >
-                      {section.children.map((item) => (
-                        <li class={"text-#000"}>
-                          <SectionItem item={item} />
-                        </li>
-                      ))}
-                    </ul>
-                  </Text>
-                </li>
+            <div class="flex flex-col sm:hidden sm:flex-row gap-4">
+              <ul class="flex flex-col sm:hidden sm:flex-row gap-4">
+                {sections.map((section) => (
+                  <li>
+                    <Text variant="body">
+                      {section.label}
+                      <ul
+                        class={hasIcon(section.children)
+                          ? "grid grid-cols-4 gap-2 text-black"
+                          : "flex flex-col"}
+                      >
+                        {section.children.map((item) => (
+                          <li class={"text-black"}>
+                            <SectionItem item={item} />
+                          </li>
+                        ))}
+                      </ul>
+                    </Text>
+                  </li>
+                ))}
+              </ul>            
+              {imageFooter.map((item) => (
+                <div class="flex sm:flex-row gap-4 ">
+                  <ImageFooter item={item} />
+                </div>
               ))}
-            </ul>
+            </div>
           </FooterContainer>
         </Container>
       </div>

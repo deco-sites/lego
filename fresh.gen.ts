@@ -717,6 +717,24 @@ const manifest: DecoManifest = {
             },
             "title": "Sections",
           },
+          "imageFooter": {
+            "type": "array",
+            "items": {
+              "title": "ImageFooterType",
+              "type": "object",
+              "properties": {
+                "src": {
+                  "format": "image-uri",
+                  "type": "string",
+                  "title": "Src",
+                },
+              },
+              "required": [
+                "src",
+              ],
+            },
+            "title": "Image Footer",
+          },
         },
         "required": [],
       },
