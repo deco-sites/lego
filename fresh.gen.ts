@@ -383,22 +383,6 @@ const manifest: DecoManifest = {
                     },
                     {
                       "type": "string",
-                      "const": "Elo",
-                    },
-                    {
-                      "type": "string",
-                      "const": "Mastercard",
-                    },
-                    {
-                      "type": "string",
-                      "const": "Visa",
-                    },
-                    {
-                      "type": "string",
-                      "const": "Pix",
-                    },
-                    {
-                      "type": "string",
                       "const": "Logo",
                     },
                     {
@@ -448,6 +432,38 @@ const manifest: DecoManifest = {
                     {
                       "type": "string",
                       "const": "WhatsApp",
+                    },
+                    {
+                      "type": "string",
+                      "const": "Elo",
+                    },
+                    {
+                      "type": "string",
+                      "const": "Mastercard",
+                    },
+                    {
+                      "type": "string",
+                      "const": "Visa",
+                    },
+                    {
+                      "type": "string",
+                      "const": "Pix",
+                    },
+                    {
+                      "type": "string",
+                      "const": "HiperCard",
+                    },
+                    {
+                      "type": "string",
+                      "const": "Boleto",
+                    },
+                    {
+                      "type": "string",
+                      "const": "DinnersClub",
+                    },
+                    {
+                      "type": "string",
+                      "const": "AmericanExpress",
                     },
                   ],
                   "title": "Icon",
@@ -586,22 +602,6 @@ const manifest: DecoManifest = {
                               },
                               {
                                 "type": "string",
-                                "const": "Elo",
-                              },
-                              {
-                                "type": "string",
-                                "const": "Mastercard",
-                              },
-                              {
-                                "type": "string",
-                                "const": "Visa",
-                              },
-                              {
-                                "type": "string",
-                                "const": "Pix",
-                              },
-                              {
-                                "type": "string",
                                 "const": "Logo",
                               },
                               {
@@ -651,6 +651,38 @@ const manifest: DecoManifest = {
                               {
                                 "type": "string",
                                 "const": "WhatsApp",
+                              },
+                              {
+                                "type": "string",
+                                "const": "Elo",
+                              },
+                              {
+                                "type": "string",
+                                "const": "Mastercard",
+                              },
+                              {
+                                "type": "string",
+                                "const": "Visa",
+                              },
+                              {
+                                "type": "string",
+                                "const": "Pix",
+                              },
+                              {
+                                "type": "string",
+                                "const": "HiperCard",
+                              },
+                              {
+                                "type": "string",
+                                "const": "Boleto",
+                              },
+                              {
+                                "type": "string",
+                                "const": "DinnersClub",
+                              },
+                              {
+                                "type": "string",
+                                "const": "AmericanExpress",
                               },
                             ],
                             "title": "Icon",
