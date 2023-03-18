@@ -1,9 +1,8 @@
 import Icon, { AvailableIcons } from "$store/components/ui/Icon.tsx";
 import Text from "$store/components/ui/Text.tsx";
 import Container from "$store/components/ui/Container.tsx";
-
 import type { ComponentChildren } from "preact";
-
+import {ImageFooter}  from "./ImageFooter.tsx"
 export type IconItem = { icon: AvailableIcons };
 export type StringItem = {
   label: string;
@@ -61,6 +60,7 @@ function FooterContainer(
 
 export interface Props {
   sections?: Section[];
+  imageFooter?: ImageFooter[];
 }
 
 function Footer({ sections = [] }: Props) {
