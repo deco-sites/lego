@@ -439,7 +439,6 @@ const manifest: DecoManifest = {
                     },
                     {
                       "type": "string",
-
                       "const": "Elo",
                     },
                     {
@@ -473,7 +472,6 @@ const manifest: DecoManifest = {
                     {
                       "type": "string",
                       "const": "MarketingCardPlus",
-
                     },
                   ],
                   "title": "Icon",
@@ -693,11 +691,10 @@ const manifest: DecoManifest = {
                               {
                                 "type": "string",
                                 "const": "AmericanExpress",
-                                },                  },
-                             {
+                              },
+                              {
                                 "type": "string",
                                 "const": "MarketingCardPlus",
-
                               },
                             ],
                             "title": "Icon",
