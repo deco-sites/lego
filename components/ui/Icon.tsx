@@ -17,10 +17,6 @@ export type AvailableIcons =
   | "Minus"
   | "MapPin"
   | "Phone"
-  | "Elo"
-  | "Mastercard"
-  | "Visa"
-  | "Pix"
   | "Logo"
   | "Facebook"
   | "Instagram"
@@ -34,7 +30,16 @@ export type AvailableIcons =
   | "Trash"
   | "FilterList"
   | "WhatsApp"
+  | "Elo"
+  | "Mastercard"
+  | "Visa"
+  | "Pix"
+  | "HiperCard"
+  | "Boleto"
+  | "DinnersClub"
+  | "AmericanExpress"
   | "MarketingCardPlus";
+
 
 interface Props extends JSX.SVGAttributes<SVGSVGElement> {
   /**
@@ -47,14 +52,13 @@ interface Props extends JSX.SVGAttributes<SVGSVGElement> {
 }
 
 function Icon(
-  { id, strokeWidth = 16, size, width, height, ...otherProps }: Props,
+  { id, size, width, height, ...otherProps }: Props,
 ) {
   return (
     <svg
       {...otherProps}
       width={width ?? size}
       height={height ?? size}
-      strokeWidth={strokeWidth}
     >
       <use href={asset(`/sprites.svg#${id}`)} />
     </svg>
