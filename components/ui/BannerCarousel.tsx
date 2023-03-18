@@ -1,3 +1,4 @@
+
 import Text from "$store/components/ui/Text.tsx";
 import Icon from "$store/components/ui/Icon.tsx";
 import Button from "$store/components/ui/Button.tsx";
@@ -75,7 +76,7 @@ function BannerItem({ image, lcp }: { image: Banner; lcp?: boolean }) {
         </Picture>
         {action && (
           <div
-            class="absolute top-0 bottom-0 m-auto left-0 right-0 sm:right-auto sm:left-[12%] max-h-min max-w-[235px] flex flex-col gap-4 bg-hover-inverse p-4 rounded"
+            class=" hidden top-0 bottom-0 m-auto left-0 right-0 sm:right-auto sm:left-[12%] max-h-min max-w-[235px] flex flex-col gap-4 bg-hover-inverse p-4 rounded"
             style={{ backdropFilter: "blur(8px)" }}
           >
             <Text variant="heading-1" tone="default-inverse">
@@ -127,7 +128,7 @@ function Dots({ images, interval = 0 }: Props) {
                       }
                     `,
                   )
-                } w-16 sm:w-20 h-0.5`}
+                } w-2 sm:w-2 h-2`}
                 style={{
                   background:
                     "linear-gradient(to right, #FFFFFF var(--dot-progress), rgba(255, 255, 255, 0.4) var(--dot-progress))",
@@ -147,22 +148,22 @@ function Controls() {
       <div class="flex items-center justify-center z-10 col-start-1 row-start-2">
         <Button
           class="h-12 w-12"
-          variant="icon"
+          variant="iconblue"
           data-slide="prev"
           aria-label="Previous item"
         >
           <Icon
             class="text-default-inverse"
-            size={20}
+            size={18}
             id="ChevronLeft"
             strokeWidth={3}
           />
         </Button>
       </div>
-      <div class="flex items-center justify-center z-10 col-start-3 row-start-2">
+      <div class="flex  items-center justify-center z-10 col-start-3 row-start-2">
         <Button
-          class="h-12 w-12"
-          variant="icon"
+          class="h-12 w-12 bg-card-cta-dark"
+          variant="iconblue"
           data-slide="next"
           aria-label="Next item"
         >
