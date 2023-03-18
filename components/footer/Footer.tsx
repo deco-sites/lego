@@ -66,12 +66,12 @@ export interface Props {
 function Footer({ sections = [], imageFooter =[] }: Props) {
   return (
     <footer>
-      <div class="bg-gray-100 border-y border-slate-700">
+      <div class="bg-gray-100 border-y border-slate-700 relative max-w-[1280px] mx-auto ">
         <Container class="w-full flex flex-col divide-y-1 divide-default">
           <FooterContainer>
             {/* Desktop view */}
             <div>
-            <ul class="hidden sm:flex flex-row gap-20">
+            <ul class="hidden sm:flex flex-row gap-20 justify-start px-[30px]">
               {sections.map((section) => (
                 <li>
                   <div>
@@ -98,7 +98,7 @@ function Footer({ sections = [], imageFooter =[] }: Props) {
               ))}
             </ul>
             {imageFooter.map((item) => (
-                    <div class="w-[230px] absolute right-36 bottom-149">
+                    <div class="w-[230px] absolute right-[-2rem] bottom-[-60px] hidden sm:flex">
                       <ImageFooter item={item} />
                     </div>
                     ))} 
@@ -126,7 +126,7 @@ function Footer({ sections = [], imageFooter =[] }: Props) {
                 ))}
               </ul>            
               {imageFooter.map((item) => (
-                <div class="flex sm:flex-row gap-4 ">
+                <div class="flex sm:flex-row gap-4 sm:hidden">
                   <ImageFooter item={item} />
                 </div>
               ))}
