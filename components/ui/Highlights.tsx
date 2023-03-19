@@ -39,7 +39,7 @@ function Highlights({ highlights = [], title }: Props) {
               width={190}
               height={190}
             />
-            <Text variant="body " class="font-semibold">{label}</Text>
+            <Text class="font-semibold">{label}</Text>
           </a>
         ))}
       </Slider>
