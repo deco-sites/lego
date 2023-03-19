@@ -1125,10 +1125,15 @@ const manifest: DecoManifest = {
             ],
             "title": "Items Per Page",
           },
+          "showListPrice": {
+            "type": "boolean",
+            "title": "Show List Price",
+          },
         },
         "required": [
           "title",
           "products",
+          "showListPrice",
         ],
       },
       "outputSchema": null,
