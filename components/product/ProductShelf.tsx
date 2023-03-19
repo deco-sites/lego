@@ -13,13 +13,13 @@ export interface Props {
   title: string;
   products: LoaderReturnType<Product[] | null>;
   itemsPerPage?: number;
-  showListPrice: boolean;
+  showListPrice?: boolean;
 }
 
 function ProductShelf({
   title,
   products,
-  showListPrice = true,
+  showListPrice = false,
 }: Props) {
   const id = useId();
 
