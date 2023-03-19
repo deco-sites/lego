@@ -79,7 +79,7 @@ export default function MarketingCards({ cards = [] }: Props) {
           />
           <Text
             variant="heading-3"
-            class="ml-3 md:ml-0 text-center font-bold text-lg"
+            class="ml-3 md:ml-0 text-center font-semibold text-lg"
           >
             {title}
           </Text>

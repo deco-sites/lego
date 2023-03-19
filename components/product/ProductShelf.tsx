@@ -30,10 +30,10 @@ function ProductShelf({
   return (
     <Container
       id={id}
-      class="flex flex-col overflow-hidden my-4"
+      class="flex flex-col overflow-hidden my-4 mb-12"
     >
-      <h2 class="text-center row-start-1 col-span-full mt-4 mb-8">
-        <Text variant="heading-2" class="font-bold text-3xl">{title}</Text>
+      <h2 class="text-center row-start-1 col-span-full m-4 mb-8">
+        <Text variant="heading-2" class="font-semibold text-3xl">{title}</Text>
       </h2>
 
       <div class="grid grid-cols-[48px_1fr_48px] grid-rows-[1fr_48px_1fr]">

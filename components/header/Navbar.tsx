@@ -24,7 +24,7 @@ function Navbar({ items, searchbar }: {
           class={`flex-grow w-[30px] inline-flex items-center min-h-[${navbarHeight}]`}
           aria-label="Store logo"
         >
-          <img class="w-[30px]" src="./lego-logo-m.png"/>
+          <img class="w-[30px]" src="/lego-logo-m.png"/>
           <HeaderButton variant="menu" />
         </a>
         
@@ -37,7 +37,7 @@ function Navbar({ items, searchbar }: {
       <div class="hidden md:flex flex-row justify-between items-center border-b-1 border-default w-full pl-2 pr-3 h-[70px] bg-menu shadow-menu z-10">
         <div class="flex-none w-44">
           <a href="/" aria-label="Store logo" class=" ml-[120px] block px-4 py-3 w-[160px] border-menu-separator border-r">
-            <img class="w-[155px]" src="./lego-logo.png" width="160px"/>
+            <img class="w-[155px]" src="/lego-logo.png" width="160px"/>
           </a>
         </div>
         <div class="flex-auto flex justify-center">
