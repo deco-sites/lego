@@ -31,7 +31,7 @@ function Alert({ alerts = [], interval = 5 }: Props) {
                 
               >
                 
-                <img src="./icons/login-ico.png" width="30px" height="30px"/>
+                <img src="/icons/login-ico.png" width="30px" height="30px"/>
                 <p style="color:white;font-size: 0.625em;font-weight: 700;">LOGIN</p>
                 
               </Button>
@@ -39,10 +39,7 @@ function Alert({ alerts = [], interval = 5 }: Props) {
               
 
               <HeaderButton variant="cart" />
-              
-                <img src="./icons/minicart-ico.png" width="20px" height="20px"/>
-                
-                <p style="color:white;font-size: 0.625em;font-weight: 700;margin-left:-1px;">CARRINHO</p>
+               <p style="color:white;font-size: 0.625em;font-weight: 700;margin-left:-21px;">CARRINHO</p>
 
 
               
