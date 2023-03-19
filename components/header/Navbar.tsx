@@ -1,7 +1,6 @@
 import HeaderButton from "$store/islands/HeaderButton.tsx";
 import Icon from "$store/components/ui/Icon.tsx";
 import Button from "$store/components/ui/Button.tsx";
-
 import NavItem from "./NavItem.tsx";
 import { navbarHeight } from "./constants.ts";
 import type { INavItem } from "./NavItem.tsx";
@@ -35,10 +34,10 @@ function Navbar({ items, searchbar }: {
       </div>
 
       {/* Desktop Version */}
-      <div class="hidden md:flex flex-row justify-between items-center border-b-1 border-default w-full pl-2 pr-3">
+      <div class="hidden md:flex flex-row justify-between items-center border-b-1 border-default w-full pl-2 pr-3 h-[70px] bg-menu shadow-menu z-10">
         <div class="flex-none w-44">
-          <a href="/" aria-label="Store logo" class="block px-4 py-3 w-[160px]">
-            <Icon id="Logo" width={126} height={16} />
+          <a href="/" aria-label="Store logo" class=" ml-[120px] block px-4 py-3 w-[160px] border-menu-separator border-r">
+            <img class="w-[155px]" src="./lego-logo.png" width="160px"/>
           </a>
         </div>
         <div class="flex-auto flex justify-center">
@@ -47,6 +46,7 @@ function Navbar({ items, searchbar }: {
         <div class="flex-none w-44 flex items-center justify-end gap-2">
           <HeaderButton variant="search" />
           <HeaderSearchMenu searchbar={searchbar} />
+          
           <Button
             as="a"
             variant="icon"
