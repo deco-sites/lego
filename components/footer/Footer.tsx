@@ -128,7 +128,7 @@ function Footer({ sections = [], imageFooter =[] }: Props) {
                 ))}
               </ul>            
               {imageFooter.map((item) => (
-                <div class="flex sm:flex-row gap-1 sm:hidden W-[230px] absolute right-[-2rem] bottom-[200px] sm:flex">
+                <div class="flex sm:flex-row gap-1 sm:hidden W-[230px] absolute right-[1rem] bottom-[200px] sm:flex">
                   <ImageFooter item={item} />
                 </div>
               ))}
