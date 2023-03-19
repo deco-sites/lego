@@ -15,18 +15,19 @@ function Navbar({ items, searchbar }: {
     <>
       {/* Mobile Version */}
       <div
-        class={`md:hidden flex flex-row justify-between items-center h-[${navbarHeight}] border-b-1 border-default w-full px-2 gap-2`}
+        class={`md:hidden flex flex-row justify-between items-center h-[${navbarHeight}] border-b-1 w-full px-2 gap-2 bg-menu shadow-menu z-10`}
       >
-        <HeaderButton variant="menu" />
+        
 
         <a
           href="/"
-          class={`flex-grow inline-flex items-center min-h-[${navbarHeight}]`}
+          class={`flex-grow w-[30px] inline-flex items-center min-h-[${navbarHeight}]`}
           aria-label="Store logo"
         >
-          <Icon id="Logo" width={126} height={16} />
+          <img class="w-[30px]" src="./lego-logo-m.png"/>
+          <HeaderButton variant="menu" />
         </a>
-
+        
         <div class="flex gap-1">
           <HeaderButton variant="search" />
           <HeaderButton variant="cart" />
