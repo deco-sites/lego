@@ -380,183 +380,45 @@ const manifest: DecoManifest = {
               "title": "Feature",
               "type": "object",
               "properties": {
-                "icon": {
-                  "type": "string",
-                  "anyOf": [
-                    {
-                      "type": "string",
-                      "const": "ChevronLeft",
-                    },
-                    {
-                      "type": "string",
-                      "const": "ChevronRight",
-                    },
-                    {
-                      "type": "string",
-                      "const": "ChevronUp",
-                    },
-                    {
-                      "type": "string",
-                      "const": "ChevronDown",
-                    },
-                    {
-                      "type": "string",
-                      "const": "QuestionMarkCircle",
-                    },
-                    {
-                      "type": "string",
-                      "const": "User",
-                    },
-                    {
-                      "type": "string",
-                      "const": "ShoppingCart",
-                    },
-                    {
-                      "type": "string",
-                      "const": "Bars3",
-                    },
-                    {
-                      "type": "string",
-                      "const": "Heart",
-                    },
-                    {
-                      "type": "string",
-                      "const": "MagnifyingGlass",
-                    },
-                    {
-                      "type": "string",
-                      "const": "XMark",
-                    },
-                    {
-                      "type": "string",
-                      "const": "Plus",
-                    },
-                    {
-                      "type": "string",
-                      "const": "Minus",
-                    },
-                    {
-                      "type": "string",
-                      "const": "MapPin",
-                    },
-                    {
-                      "type": "string",
-                      "const": "Phone",
-                    },
-                    {
-                      "type": "string",
-                      "const": "Logo",
-                    },
-                    {
-                      "type": "string",
-                      "const": "Facebook",
-                    },
-                    {
-                      "type": "string",
-                      "const": "Instagram",
-                    },
-                    {
-                      "type": "string",
-                      "const": "Tiktok",
-                    },
-                    {
-                      "type": "string",
-                      "const": "Truck",
-                    },
-                    {
-                      "type": "string",
-                      "const": "Discount",
-                    },
-                    {
-                      "type": "string",
-                      "const": "Return",
-                    },
-                    {
-                      "type": "string",
-                      "const": "CreditCard",
-                    },
-                    {
-                      "type": "string",
-                      "const": "Deco",
-                    },
-                    {
-                      "type": "string",
-                      "const": "Discord",
-                    },
-                    {
-                      "type": "string",
-                      "const": "Trash",
-                    },
-                    {
-                      "type": "string",
-                      "const": "FilterList",
-                    },
-                    {
-                      "type": "string",
-                      "const": "WhatsApp",
-                    },
-                    {
-                      "type": "string",
-                      "const": "Elo",
-                    },
-                    {
-                      "type": "string",
-                      "const": "Mastercard",
-                    },
-                    {
-                      "type": "string",
-                      "const": "Visa",
-                    },
-                    {
-                      "type": "string",
-                      "const": "Pix",
-                    },
-                    {
-                      "type": "string",
-                      "const": "HiperCard",
-                    },
-                    {
-                      "type": "string",
-                      "const": "Boleto",
-                    },
-                    {
-                      "type": "string",
-                      "const": "DinnersClub",
-                    },
-                    {
-                      "type": "string",
-                      "const": "AmericanExpress",
-                    },
-                    {
-                      "type": "string",
-                      "const": "MarketingCardPlus",
-                    },
-                  ],
-                  "title": "Icon",
-                  "description": "Image src",
-                },
                 "title": {
                   "type": "string",
                   "title": "Title",
-                  "description": "Title",
+                },
+                "alt": {
+                  "type": "string",
+                  "title": "Alt",
+                },
+                "href": {
+                  "type": "string",
+                  "title": "Href",
                 },
                 "description": {
                   "type": "string",
                   "title": "Description",
-                  "description": "Description and Image alt text",
+                },
+                "src": {
+                  "format": "image-uri",
+                  "type": "string",
+                  "title": "Src",
                 },
               },
               "required": [
-                "icon",
                 "title",
+                "alt",
+                "href",
                 "description",
+                "src",
               ],
             },
             "title": "Features",
           },
+          "title": {
+            "type": "string",
+            "title": "Title",
+          },
         },
         "required": [
-          "features",
+          "title",
         ],
       },
       "outputSchema": null,
