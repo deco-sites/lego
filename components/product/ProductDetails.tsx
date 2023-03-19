@@ -71,9 +71,9 @@ function Details({ page }: { page: ProductDetailsPage }) {
           />
           {/* ))} */}
 
-          <div class="flex justify-center mt-3 gap-3 overflow-x-auto snap-x snap-mandatory scrollbar-none">
+          <div class="flex mt-3 gap-3 max-w-[480px] m-auto overflow-x-auto snap-x snap-mandatory scrollbar-none">
             {images?.map(({ url, alternateName }) => (
-              <div style={{aspectRatio: "1"}} class="min-h-[85px] w-[100px] snap-center border border-gray-200">
+              <div style={{aspectRatio: "1"}} class="min-h-[85px] w-[100px] snap-start border border-gray-200">
                 <img
                   src={resizeVtexImage(url!, 100, 100)}
                   alt={alternateName}
@@ -84,20 +84,20 @@ function Details({ page }: { page: ProductDetailsPage }) {
           </div>
         </div>
         {/* Product Info */}
-        <div class="flex-auto px-4 sm:px-0 md:flex-none">
+        <div class="flex-auto px-4 sm:px-0 md:flex-none md:flex-product-info">
           {/* Code and name */}
           <div class="mt-4 sm:mt-8">
             <div>
               <Text
                 tone="subdued"
                 variant="caption"
-                class="font-bold text-black"
+                class="font-medium text-black"
               >
                 CÓDIGO: {gtin}
               </Text>
             </div>
             <h1 class="my-3 max-w-sm break-words">
-              <Text variant="heading-3" class="block">{name}</Text>
+              <Text variant="heading-3" class="block text-2xl font-normal">{name}</Text>
             </h1>
           </div>
           {/* Prices */}
@@ -116,11 +116,11 @@ function Details({ page }: { page: ProductDetailsPage }) {
                 <Text
                   tone="price"
                   variant="heading-3"
-                  class="mr-2 text-sm font-black"
+                  class="mr-2 text-[16px] font-medium"
                 >
                   POR:
                 </Text>
-                <Text tone="price" variant="heading-3" class="font-black">
+                <Text tone="price" variant="heading-3" class="font-medium text-xl">
                   {formatPrice(price, offers!.priceCurrency!)}
                 </Text>
               </div>
@@ -128,7 +128,7 @@ function Details({ page }: { page: ProductDetailsPage }) {
             <Text
               tone="subdued"
               variant="caption"
-              class="text-[16px] font-bold text-black"
+              class="text-[16px] font-medium text-black"
             >
               OU {installments}
             </Text>
@@ -146,7 +146,7 @@ function Details({ page }: { page: ProductDetailsPage }) {
                 class="max-w-none h-auto py-3"
               />
             )}
-            <Button variant="secondary" class="h-auto py-3">
+            <Button variant="secondary" class="h-auto py-3 font-normal">
               <Icon id="Heart" width={20} height={20} strokeWidth={2} />{" "}
               Favoritar
             </Button>
@@ -154,7 +154,7 @@ function Details({ page }: { page: ProductDetailsPage }) {
         </div>
       </div>
       {/* Description card */}
-      <div class="m-4 mt-8 sm:mt-6">
+      <div class="m-4 mt-8 sm:mt-14">
         <Text variant="caption">
           {description && (
             <div class="ml-2">
@@ -164,7 +164,7 @@ function Details({ page }: { page: ProductDetailsPage }) {
                   width={50}
                   height={50}
                 />
-                <Text variant="heading-2" class="cursor-pointer font-bold">
+                <Text variant="heading-2" class="cursor-pointer font-semibold">
                   Características
                 </Text>
               </h2>

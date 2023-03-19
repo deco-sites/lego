@@ -134,6 +134,9 @@ const options: Omit<Options, "selfURL"> = {
       transitionProperty: {
         "max-height": "max-height",
       },
+      flex: {
+        "product-info": "0 1 30%"
+      }
     },
     fontFamily: {
       sans: ["Lego", "sans-serif"],
