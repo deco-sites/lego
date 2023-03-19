@@ -95,7 +95,7 @@ export default function MarketingCards({ cards = [] }: Props) {
             href={href}
             class={`${
               openItems[index] ? "block" : "hidden"
-            } md:block mt-4 block bg-gradient-to-t from-card-cta-dark to-card-cta-light shadow-card-cta border-1 border-black font-bold text-default-inverse text-xs py-2 px-4`}
+            } md:hover:bg-gray-700 md:transform md:hover:scale-105 md:block mt-4 block bg-gradient-to-t from-card-cta-dark to-card-cta-light shadow-card-cta border-1 border-black font-bold text-default-inverse text-xs py-2 px-4`}
           >
             {label}
           </a>
