@@ -4,6 +4,8 @@ import Container from "$store/components/ui/Container.tsx";
 import type { ComponentChildren } from "preact";
 import ImageFooter, { ImageFooter as ImageFooterType } from "./ImageFooter.tsx";
 export type IconItem = { icon: AvailableIcons };
+
+
 export type StringItem = {
   label: string;
   href: string;
