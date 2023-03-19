@@ -47,6 +47,7 @@ const options: Omit<Options, "selfURL"> = {
         "card-cta-light": "#008BEA",
         "menu": "#FFCF00",
         "menu-separator": "rgba(0, 0, 0, 0.08)",
+        "black-header" : "#2c2c2c",
       },
       textColor: {
         "default": "#161616",
