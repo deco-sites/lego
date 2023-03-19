@@ -48,6 +48,10 @@ const options: Omit<Options, "selfURL"> = {
         "menu": "#FFCF00",
         "menu-separator": "rgba(0, 0, 0, 0.08)",
         "black-header" : "#2c2c2c",
+        "slider-arrow": "#006DB7",
+        "slider-arrow-hover": "#008BEA",
+        "buy-button-1": "#FF7B22",
+        "buy-button-2": "#E65F09",
       },
       textColor: {
         "default": "#161616",
@@ -59,6 +63,7 @@ const options: Omit<Options, "selfURL"> = {
         "positive": "#1A7346",
         "critical": "#B44125",
         "card-cta": "#FFFFFF",
+        "slider-arrow": "#FFFFFF",
       },
       borderColor: {
         "default": "#D4DBD7",
@@ -67,6 +72,10 @@ const options: Omit<Options, "selfURL"> = {
         "focus": "#3379EF",
         "positive": "#1A7346",
         "critical": "#B44125",
+        "slider-arrow": "#004F84",
+      },
+      borderWidth: {
+        "slider-arrow-width": "1px 1px 2px",
       },
       outline: {
         interactive: ["2px solid #3379EF", "2px"],
@@ -119,9 +128,11 @@ const options: Omit<Options, "selfURL"> = {
         card: "inset 0 0 30px rgb(0 0 0 / 30%)",
         "card-cta":
           "inset 0 0 2px rgb(255 255 255 / 30%), inset 0 1px 0 rgb(255 255 255 / 30%)",
+        "slider-arrow":
+          "inset 0 0 2px rgb(255 255 255 / 30%), inset 0 1px 0 rgb(255 255 255 / 30%)",
       },
       transitionProperty: {
-        "max-height": 'max-height',
+        "max-height": "max-height",
       },
     },
     fontFamily: {
