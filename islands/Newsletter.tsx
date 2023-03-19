@@ -36,7 +36,7 @@ export default function Newsletters({ item = [] }: Props) {
           />
           <Text
             variant="heading-3"
-            class=" text-sm ml-3 md:ml-0 text-center font-bold md:text-lg"
+            class=" text-sm ml-3 md:ml-0 text-center font-semibold md:text-lg"
           >
             {title}
           </Text>

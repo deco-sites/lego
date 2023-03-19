@@ -33,7 +33,7 @@ export default function AgeMenu(
     <div class="w-full md:-mt-12">
       <button
         type="button"
-        class="w-full h-12 md:w-[440px] md:m-auto flex justify-center items-center relative px-3 font-bold text-lg focus:outline-none bg-menu shadow-menu z-10"
+        class="w-full h-12 md:w-[440px] md:m-auto flex justify-center items-center relative px-3 font-semibold text-lg focus:outline-none bg-menu shadow-menu z-10"
         onClick={() => setOpen(!open)}
       >
         {menuTitle}
@@ -58,7 +58,7 @@ export default function AgeMenu(
                 height={215}
                 class="max-w-[150px] transition-all duration-300 transform-gpu hover:-translate-y-1"
               />
-              <Text variant="body" class="font-black pl-3 text-lg md:text-[18px] md:mt-3">
+              <Text variant="body" class="pl-3 text-lg md:text-[18px] md:mt-3">
                 {title}
               </Text>
             </a>
