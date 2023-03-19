@@ -1,11 +1,12 @@
 import Image from "deco-sites/std/components/Image.tsx";
 import Text from "$store/components/ui/Text.tsx";
 import Avatar from "$store/components/ui/Avatar.tsx";
-import Button from "$store/components/ui/Button.tsx";
+// import Button from "$store/components/ui/Button.tsx";
 import { useOffer } from "$store/sdk/useOffer.ts";
 import { formatPrice } from "$store/sdk/format.ts";
 import { useVariantPossibilities } from "$store/sdk/useVariantPossiblities.ts";
 import type { Product } from "deco-sites/std/commerce/types.ts";
+import AddToCardButton from "../../islands/AddToCartButton.tsx";
 
 /**
  * A simple, inplace sku selector to be displayed once the user hovers the product card
@@ -38,9 +39,23 @@ interface Props {
   product: Product;
   /** Preload card image */
   preload?: boolean;
+  showListPrice: boolean;
 }
 
-function ProductCard({ product, preload }: Props) {
+const setSize = (src: string, size: string) => {
+  const regex = /\/ids\/(\d+)\//;
+  const match = src.match(regex);
+
+  if (!match) {
+    return src;
+  }
+
+  const id = match[1];
+  const newUrl = src.replace(id, `${id}-${size}`);
+  return newUrl;
+};
+
+function ProductCard({ product, preload, showListPrice }: Props) {
   const {
     url,
     productID,
@@ -48,35 +63,37 @@ function ProductCard({ product, preload }: Props) {
     image: images,
     offers,
   } = product;
+  console.log("# product", product);
   const [front, back] = images ?? [];
   const { listPrice, price, seller } = useOffer(offers);
 
   return (
     <div
       id={`product-card-${productID}`}
-      class="w-full group"
+      class="w-full group lg:hover:-translate-y-2 lg:transition-transform lg:duration-300 lg:ease-linear"
     >
       <a href={url} aria-label="product link">
-        <div class="relative w-full">
+        <div class="relative w-full max-w-[300px] m-auto border-b border-gray-100">
           <Image
-            src={front.url!}
+            src={setSize(front.url!, "300-300")}
             alt={front.alternateName}
-            width={200}
-            height={279}
+            width={300}
+            height={300}
             class="rounded w-full group-hover:hidden"
             preload={preload}
             loading={preload ? "eager" : "lazy"}
             sizes="(max-width: 640px) 50vw, 20vw"
           />
           <Image
-            src={back?.url ?? front.url!}
+            src={setSize(back?.url ?? front.url!, "300-300")}
             alt={back?.alternateName ?? front.alternateName}
-            width={200}
-            height={279}
+            width={300}
+            height={300}
             class="rounded w-full hidden group-hover:block"
             sizes="(max-width: 640px) 50vw, 20vw"
           />
-          {seller && (
+
+          {/* {seller && (
             <div
               class="absolute bottom-0 hidden sm:group-hover:flex flex-col gap-2 w-full p-2 bg-opacity-10"
               style={{
@@ -87,29 +104,43 @@ function ProductCard({ product, preload }: Props) {
               <Sizes {...product} />
               <Button as="a" href={product.url}>Visualizar Produto</Button>
             </div>
-          )}
+          )} */}
         </div>
 
-        <div class="flex flex-col gap-1 py-2">
+        <div class="flex flex-col gap-1 py-2 px-4 w-max max-w-full m-auto">
           <Text
-            class="overflow-hidden overflow-ellipsis whitespace-nowrap"
+            class="overflow-hidden overflow-ellipsis whitespace-nowrap text-lg"
             variant="caption"
           >
             {name}
           </Text>
-          <div class="flex items-center gap-2">
-            <Text
-              class="line-through"
-              variant="list-price"
-              tone="subdued"
-            >
-              {formatPrice(listPrice, offers!.priceCurrency!)}
-            </Text>
-            <Text variant="caption" tone="price">
-              {formatPrice(price, offers!.priceCurrency!)}
-            </Text>
+          <div class="flex flex-col items-center">
+            {showListPrice && (
+              <Text
+                class="line-through text-lg"
+                variant="list-price"
+                tone="subdued"
+              >
+                De {formatPrice(listPrice, offers!.priceCurrency!)}
+              </Text>
+            )}
+
+            <div>
+              <Text variant="caption" class="text-xl text-black mr-2">
+                POR:
+              </Text>
+              <Text
+                variant="caption"
+                tone="price"
+                class="text-xl !text-black font-black"
+              >
+                {formatPrice(price, offers!.priceCurrency!)}
+              </Text>
+            </div>
           </div>
         </div>
+
+        {seller && <AddToCardButton sellerId={seller} skuId={productID} />}
       </a>
     </div>
   );
