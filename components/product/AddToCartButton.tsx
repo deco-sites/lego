@@ -16,7 +16,7 @@ function AddToCartButton({ skuId, sellerId, class: _class = "" }: Props) {
   return (
     <Button
       {...props}
-      class={`w-full max-w-[340px] bg-gradient-to-b from-buy-button-1 to-buy-button-2 text-white hover:text-white block m-auto ${_class}`}
+      class={`w-full max-w-[340px] bg-gradient-to-b from-buy-button-1 to-buy-button-2 text-white hover:text-white block m-auto tracking-wider ${_class}`}
     >
       COMPRAR
     </Button>

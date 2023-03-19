@@ -116,13 +116,13 @@ function ProductCard({ product, preload, showListPrice }: Props) {
             )}
 
             <div>
-              <Text variant="caption" class="text-xl text-black mr-2">
+              <Text variant="caption" class="text-lg text-black mr-2">
                 POR:
               </Text>
               <Text
                 variant="caption"
                 tone="price"
-                class="text-xl !text-black font-black"
+                class="text-xl !text-black font-semibold"
               >
                 {formatPrice(price, offers!.priceCurrency!)}
               </Text>
