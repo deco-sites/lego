@@ -29,8 +29,7 @@ function Navbar({ items, searchbar }: {
         </a>
         
         <div class="flex gap-1">
-          <HeaderButton variant="search" />
-          <HeaderButton variant="cart" />
+
         </div>
       </div>
 
@@ -48,15 +47,6 @@ function Navbar({ items, searchbar }: {
           <HeaderButton variant="search" />
           <HeaderSearchMenu searchbar={searchbar} />
           
-          <Button
-            as="a"
-            variant="icon"
-            href="/login"
-            aria-label="Log in"
-          >
-            <Icon id="User" width={20} height={20} strokeWidth={0.4} />
-          </Button>
-          <HeaderButton variant="cart" />
         </div>
       </div>
     </>

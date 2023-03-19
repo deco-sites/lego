@@ -616,6 +616,10 @@ const manifest: DecoManifest = {
                                 "type": "string",
                                 "const": "MarketingCardPlus",
                               },
+                              {
+                                "type": "string",
+                                "const": "Login",
+                              },
                             ],
                             "title": "Icon",
                           },
