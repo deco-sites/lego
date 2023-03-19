@@ -56,7 +56,7 @@ export default function AgeMenu(
                 alt={alt}
                 width={456}
                 height={215}
-                class="max-w-[150px]"
+                class="max-w-[150px] transition-all duration-300 transform-gpu hover:-translate-y-1"
               />
               <Text variant="body" class="font-black pl-3 text-lg md:text-[18px] md:mt-3">
                 {title}
