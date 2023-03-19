@@ -85,8 +85,8 @@ function Footer({ sections = [], imageFooter =[] }: Props) {
                     </Text>
                     <ul
                       class={hasIcon(section.children)
-                        ? "grid grid-cols-4 gap-2"
-                        : "flex flex-col"}
+                        ? "grid grid-cols-4 gap-1 ml-[-28px] mt-[30px]"
+                        : "flex flex-col mt-[30px]"}
                     >
                       {section.children.map((item) => (
                         <li class={"h-10 w-20"}>
@@ -114,7 +114,7 @@ function Footer({ sections = [], imageFooter =[] }: Props) {
                       {section.label}
                       <ul
                         class={hasIcon(section.children)
-                          ? "grid grid-cols-4 gap-2 text-black"
+                          ? "grid grid-cols-4 gap-1 text-black"
                           : "flex flex-col"}
                       >
                         {section.children.map((item) => (
@@ -128,7 +128,7 @@ function Footer({ sections = [], imageFooter =[] }: Props) {
                 ))}
               </ul>            
               {imageFooter.map((item) => (
-                <div class="flex sm:flex-row gap-4 sm:hidden">
+                <div class="flex sm:flex-row gap-1 sm:hidden W-[230px] absolute right-[-2rem] bottom-[200px] sm:flex">
                   <ImageFooter item={item} />
                 </div>
               ))}
