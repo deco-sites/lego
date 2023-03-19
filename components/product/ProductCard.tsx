@@ -39,7 +39,7 @@ interface Props {
   product: Product;
   /** Preload card image */
   preload?: boolean;
-  showListPrice: boolean;
+  showListPrice?: boolean;
 }
 
 const setSize = (src: string, size: string) => {
@@ -93,7 +93,8 @@ function ProductCard({ product, preload, showListPrice }: Props) {
             sizes="(max-width: 640px) 50vw, 20vw"
           />
 
-          {/* {seller && (
+          {
+            /* {seller && (
             <div
               class="absolute bottom-0 hidden sm:group-hover:flex flex-col gap-2 w-full p-2 bg-opacity-10"
               style={{
@@ -104,7 +105,8 @@ function ProductCard({ product, preload, showListPrice }: Props) {
               <Sizes {...product} />
               <Button as="a" href={product.url}>Visualizar Produto</Button>
             </div>
-          )} */}
+          )} */
+          }
         </div>
 
         <div class="flex flex-col gap-1 py-2 px-4 w-max max-w-full m-auto">
