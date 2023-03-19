@@ -20,27 +20,30 @@ function Alert({ alerts = [], interval = 5 }: Props) {
 
   return (
     <div id={id}>
-      <Slider class="bg-badge gap-6 scrollbar-none bg-black-header">
-        {alerts.map((alert) => (
-          <Text
-            class="flex justify-center items-center w-screen h-[38px]"
-            variant="caption"
-            tone="default-inverse"
-          >
-            {alert}
-          </Text>
-          
-        ))}
+      <Slider class="bg-badge gap-6 scrollbar-none bg-black-header justify-end">
 
-               <Button
+
+    <Button
                 as="a"
                 variant="icon"
                 href="/login"
                 aria-label="Log in"
+                
               >
-                <Icon id="User" width={20} height={20} strokeWidth={0.4} />
+                
+                <img src="/icons/login-ico.png" width="30px" height="30px"/>
+                <p style="color:white;font-size: 0.625em;font-weight: 700;">LOGIN</p>
+                
               </Button>
+
+              
+
               <HeaderButton variant="cart" />
+               <p style="color:white;font-size: 0.625em;font-weight: 700;margin-left:-21px;">CARRINHO</p>
+
+
+              
+
 
           <SliderControllerJS rootId={id} interval={interval && interval * 1e3} />
       </Slider>
