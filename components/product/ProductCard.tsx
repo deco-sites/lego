@@ -7,6 +7,7 @@ import { formatPrice } from "$store/sdk/format.ts";
 import { useVariantPossibilities } from "$store/sdk/useVariantPossiblities.ts";
 import type { Product } from "deco-sites/std/commerce/types.ts";
 import AddToCardButton from "../../islands/AddToCartButton.tsx";
+import { resizeVtexImage } from "$store/sdk/resizeVtexImage.tsx";
 
 /**
  * A simple, inplace sku selector to be displayed once the user hovers the product card
@@ -42,19 +43,6 @@ interface Props {
   showListPrice?: boolean;
 }
 
-const setSize = (src: string, size: string) => {
-  const regex = /\/ids\/(\d+)\//;
-  const match = src.match(regex);
-
-  if (!match) {
-    return src;
-  }
-
-  const id = match[1];
-  const newUrl = src.replace(id, `${id}-${size}`);
-  return newUrl;
-};
-
 function ProductCard({ product, preload, showListPrice }: Props) {
   const {
     url,
@@ -63,7 +51,7 @@ function ProductCard({ product, preload, showListPrice }: Props) {
     image: images,
     offers,
   } = product;
-  console.log("# product", product);
+  
   const [front, back] = images ?? [];
   const { listPrice, price, seller } = useOffer(offers);
 
@@ -75,7 +63,7 @@ function ProductCard({ product, preload, showListPrice }: Props) {
       <a href={url} aria-label="product link">
         <div class="relative w-full max-w-[300px] m-auto border-b border-gray-100">
           <Image
-            src={setSize(front.url!, "300-300")}
+            src={resizeVtexImage(front.url!, 300, 300)}
             alt={front.alternateName}
             width={300}
             height={300}
@@ -85,7 +73,7 @@ function ProductCard({ product, preload, showListPrice }: Props) {
             sizes="(max-width: 640px) 50vw, 20vw"
           />
           <Image
-            src={setSize(back?.url ?? front.url!, "300-300")}
+            src={resizeVtexImage(back?.url ?? front.url!, 300, 300)}
             alt={back?.alternateName ?? front.alternateName}
             width={300}
             height={300}

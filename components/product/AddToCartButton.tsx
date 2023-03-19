@@ -4,9 +4,10 @@ import { useAddToCart } from "$store/sdk/useAddToCart.ts";
 interface Props {
   skuId: string;
   sellerId: string;
+  class?: string;
 }
 
-function AddToCartButton({ skuId, sellerId }: Props) {
+function AddToCartButton({ skuId, sellerId, class: _class = "" }: Props) {
   const props = useAddToCart({
     skuId,
     sellerId,
@@ -15,7 +16,7 @@ function AddToCartButton({ skuId, sellerId }: Props) {
   return (
     <Button
       {...props}
-      class="w-full max-w-[340px] bg-gradient-to-b from-buy-button-1 to-buy-button-2 text-white hover:text-white block m-auto"
+      class={`w-full max-w-[340px] bg-gradient-to-b from-buy-button-1 to-buy-button-2 text-white hover:text-white block m-auto ${_class}`}
     >
       COMPRAR
     </Button>

@@ -7,6 +7,7 @@ import Button from "$store/components/ui/Button.tsx";
 import Icon from "$store/components/ui/Icon.tsx";
 import { useOffer } from "$store/sdk/useOffer.ts";
 import { formatPrice } from "$store/sdk/format.ts";
+import { resizeVtexImage } from "$store/sdk/resizeVtexImage.tsx";
 import type { LoaderReturnType } from "$live/types.ts";
 import type { ProductDetailsPage } from "deco-sites/std/commerce/types.ts";
 
@@ -42,62 +43,94 @@ function Details({ page }: { page: ProductDetailsPage }) {
     name,
     gtin,
   } = product;
+  console.log("# description", description);
   const { price, listPrice, seller, installments } = useOffer(offers);
   const [front, back] = images ?? [];
 
   return (
     <Container class="py-0 sm:py-10">
-      <div class="flex flex-col gap-4 sm:flex-row sm:gap-10">
+      {/* Breadcrumb */}
+      <Breadcrumb
+        itemListElement={breadcrumbList?.itemListElement.slice(0, -1)}
+      />
+      <div class="flex flex-col gap-4 mx-4 md:flex-row md:justify-center sm:gap-10">
         {/* Image Gallery */}
-        <div class="flex flex-row overflow-auto snap-x snap-mandatory scroll-smooth sm:gap-2">
-          {[front, back ?? front].map((img, index) => (
-            <Image
-              style={{ aspectRatio: "360 / 500" }}
-              class="snap-center min-w-[100vw] sm:min-w-0 sm:w-auto sm:h-[600px]"
-              sizes="(max-width: 640px) 100vw, 30vw"
-              src={img.url!}
-              alt={img.alternateName}
-              width={360}
-              height={500}
-              // Preload LCP image for better web vitals
-              preload={index === 0}
-              loading={index === 0 ? "eager" : "lazy"}
-            />
-          ))}
+        <div class="flex flex-col overflow-auto snap-x snap-mandatory scroll-smooth sm:gap-2 md:flex-grow max-w-[600px]">
+          {/* {[front, back ?? front].map((img, index) => ( */}
+          <Image
+            style={{ aspectRatio: "1000 / 750" }}
+            class="snap-center w-full object-contain"
+            sizes="(max-width: 640px) 100vw, 30vw"
+            src={resizeVtexImage(front.url!, 1000, 750)}
+            alt={front.alternateName}
+            width={1000}
+            height={750}
+            // Preload LCP image for better web vitals
+            preload={true}
+            loading="eager"
+          />
+          {/* ))} */}
+
+          <div class="flex justify-center mt-3 gap-3 overflow-x-auto snap-x snap-mandatory scrollbar-none">
+            {images?.map(({ url, alternateName }) => (
+              <div style={{aspectRatio: "1"}} class="min-h-[85px] w-[100px] snap-center border border-gray-200">
+                <img
+                  src={resizeVtexImage(url!, 100, 100)}
+                  alt={alternateName}
+                  decoding="async"
+                />
+              </div>
+            ))}
+          </div>
         </div>
         {/* Product Info */}
-        <div class="flex-auto px-4 sm:px-0">
-          {/* Breadcrumb */}
-          <Breadcrumb
-            itemListElement={breadcrumbList?.itemListElement.slice(0, -1)}
-          />
+        <div class="flex-auto px-4 sm:px-0 md:flex-none">
           {/* Code and name */}
           <div class="mt-4 sm:mt-8">
             <div>
-              <Text tone="subdued" variant="caption">
-                Cod. {gtin}
+              <Text
+                tone="subdued"
+                variant="caption"
+                class="font-bold text-black"
+              >
+                CÓDIGO: {gtin}
               </Text>
             </div>
-            <h1>
-              <Text variant="heading-3">{name}</Text>
+            <h1 class="my-3 max-w-sm break-words">
+              <Text variant="heading-3" class="block">{name}</Text>
             </h1>
           </div>
           {/* Prices */}
           <div class="mt-4">
             <div class="flex flex-row gap-2 items-center">
-              <Text
+              {
+                /* <Text
                 class="line-through"
                 tone="subdued"
                 variant="list-price"
               >
                 {formatPrice(listPrice, offers!.priceCurrency!)}
-              </Text>
-              <Text tone="price" variant="heading-3">
-                {formatPrice(price, offers!.priceCurrency!)}
-              </Text>
+              </Text> */
+              }
+              <div>
+                <Text
+                  tone="price"
+                  variant="heading-3"
+                  class="mr-2 text-sm font-black"
+                >
+                  POR:
+                </Text>
+                <Text tone="price" variant="heading-3" class="font-black">
+                  {formatPrice(price, offers!.priceCurrency!)}
+                </Text>
+              </div>
             </div>
-            <Text tone="subdued" variant="caption">
-              {installments}
+            <Text
+              tone="subdued"
+              variant="caption"
+              class="text-[16px] font-bold text-black"
+            >
+              OU {installments}
             </Text>
           </div>
           {/* Sku Selector */}
@@ -110,25 +143,37 @@ function Details({ page }: { page: ProductDetailsPage }) {
               <AddToCartButton
                 skuId={productID}
                 sellerId={seller}
+                class="max-w-none h-auto py-3"
               />
             )}
-            <Button variant="secondary">
+            <Button variant="secondary" class="h-auto py-3">
               <Icon id="Heart" width={20} height={20} strokeWidth={2} />{" "}
               Favoritar
             </Button>
           </div>
-          {/* Description card */}
-          <div class="mt-4 sm:mt-6">
-            <Text variant="caption">
-              {description && (
-                <details>
-                  <summary class="cursor-pointer">Descrição</summary>
-                  <div class="ml-2 mt-2">{description}</div>
-                </details>
-              )}
-            </Text>
-          </div>
         </div>
+      </div>
+      {/* Description card */}
+      <div class="m-4 mt-8 sm:mt-6">
+        <Text variant="caption">
+          {description && (
+            <div class="ml-2">
+              <h2 class="flex items-center gap-2 mb-4">
+                <img
+                  src="/icons/lego-product-features.png"
+                  width={50}
+                  height={50}
+                />
+                <Text variant="heading-2" class="cursor-pointer font-bold">
+                  Características
+                </Text>
+              </h2>
+              <div class="mt-2 whitespace-pre-wrap text-[16px] leading-normal">
+                {description}
+              </div>
+            </div>
+          )}
+        </Text>
       </div>
     </Container>
   );
